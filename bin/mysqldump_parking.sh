@@ -6,7 +6,7 @@ user=''
 passwd=''
 database='parking_meter'
 table='parking_tariff parking_tariff_range_rule parking_tariff_tag_match parking_price_table'
-output_file='parking_tariff.sql'
+output_file=$database'.parking_tariff.sql'
 
 # 1. 只导出数据结构
 # 1. 不需要 drop table
