@@ -10,5 +10,13 @@
 
 # 增删改查
 ```
+mysql > CREATE USER 'appuser'@'%' IDENTIFIED BY '123456';
 mysql > GRANT SELECT,INSERT,UPDATE,DELETE on zencart.* to appuser@'%';
+mysql > flush privileges;
+```
+
+
+# 删除用户
+```
+mysql > drop user appuser@'%';
 ```
