@@ -40,15 +40,16 @@ mysql > show variables like 'binlog%';
 [mysqld]
 log-bin=mysql-bin
 server-id=1
+
+# 不同步哪些数据库  
+binlog-ignore-db = information_schema
+binlog-ignore-db = mysql
+binlog-ignore-db = performance_schema
+binlog-ignore-db = sys
 ```
 
 ### 指定数据库
 ```
-# 不同步哪些数据库  
-binlog-ignore-db = mysql  
-binlog-ignore-db = test  
-binlog-ignore-db = information_schema  
-  
 # 只同步哪些数据库，除此之外，其他不同步  
 binlog-do-db = game 
 ```
