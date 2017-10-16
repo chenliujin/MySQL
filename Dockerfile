@@ -6,3 +6,7 @@ MAINTAINER chenliujin <liujin.chen@qq.com>
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 
 
 
+# 2.开启 binlog
+RUN echo "character-set-server = utf8" >> /etc/mysql/mysql.conf.d/mysqld.cnf && \
+    echo "log-bin=mysql-bin" >> /etc/mysql/mysql.conf.d/mysqld.cnf && \
+    echo "server-id=1" >> /etc/mysql/mysql.conf.d/mysqld.cnf
