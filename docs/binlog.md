@@ -42,6 +42,17 @@ log-bin=mysql-bin
 server-id=1
 ```
 
+### 指定数据库
+```
+# 不同步哪些数据库  
+binlog-ignore-db = mysql  
+binlog-ignore-db = test  
+binlog-ignore-db = information_schema  
+  
+# 只同步哪些数据库，除此之外，其他不同步  
+binlog-do-db = game 
+```
+
 重启 master
 ```
 mysql > show master status;
