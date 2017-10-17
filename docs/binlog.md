@@ -92,4 +92,5 @@ log_slave_updates表示允许备库将其重放的事件也记录到自身的二
 mysql > change master to master_host='k2',master_user='replication',master_password='123456',master_log_file='mysql-bin.000001',master_log_pos=154;
 mysql > start slave;
 mysql > show slave status \G;
+mysql > stop slave;
 ```
