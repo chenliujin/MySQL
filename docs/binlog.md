@@ -87,6 +87,10 @@ relay-log 日志记录的是从服务器I/O线程将主服务器的二进制日�
 
 log_slave_updates表示允许备库将其重放的事件也记录到自身的二进制日志中。
 
+### 导出 Master 上的数据
+
+mysqldump --master-data 记录 master_log_file 和 master_log_pos，启动复制时需要用到
+
 ### 启用复制
 ```
 mysql > change master to master_host='k2',master_user='replication',master_password='123456',master_log_file='mysql-bin.000001',master_log_pos=154;
