@@ -1,5 +1,5 @@
 
-- 严格控制一张表的操作权限：INSERT，UPDATE，DELETE
+- 严格控制一张表的操作权限：INSERT，UPDATE，DELETE，不需要的权限不要分配
 
 # 只读
 ```
