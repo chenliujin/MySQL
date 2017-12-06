@@ -1,4 +1,5 @@
 
+- 严格控制一张表的操作权限：INSERT，UPDATE，DELETE
 
 # 只读
 ```
