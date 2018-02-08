@@ -10,3 +10,7 @@ RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN echo "character-set-server = utf8" >> /etc/mysql/mysql.conf.d/mysqld.cnf && \
     echo "log-bin=mysql-bin" >> /etc/mysql/mysql.conf.d/mysqld.cnf && \
     echo "server-id=1" >> /etc/mysql/mysql.conf.d/mysqld.cnf
+
+# 3.慢查询
+#slow_query_log = ON
+#long_query_time = 3
