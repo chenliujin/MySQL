@@ -1,5 +1,10 @@
 
 
+# 连接数
+```
+mysql > show full processlist;
+```
+
 
 - 主从
 - 定期备份
