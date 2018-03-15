@@ -3,6 +3,7 @@
 # 连接数
 ```
 mysql > SHOW FULL PROCESSLIST; 
+mysql > select * from information_schema.processlist where db = 'wordpress';
 ```
 
 
