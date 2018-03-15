@@ -2,7 +2,7 @@
 
 # 连接数
 ```
-mysql > show full processlist;
+mysql > SHOW FULL PROCESSLIST; 
 ```
 
 
