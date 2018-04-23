@@ -6,8 +6,23 @@ mysql > SHOW FULL PROCESSLIST;
 mysql > select * from information_schema.processlist where db = 'wordpress';
 ```
 
+# 主主
 
-- 主从
+# 主从
+
+# 服务器
+- 系统盘：100G
+- 数据盘：200G（可扩容）
+
+## 配置1
+- CPU: 8核心
+- 内存：16G
+
+## 配置2
+- CPU: 4核心
+- 内存：8G
+
+
 - 定期备份
  - 日
  - 周
