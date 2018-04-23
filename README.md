@@ -10,17 +10,17 @@ mysql > select * from information_schema.processlist where db = 'wordpress';
 
 # 主从
 
+---
+
 # 服务器
-- 系统盘：100G
-- 数据盘：200G（可扩容）
+| CPU | 内存 | 系统盘 | 数据盘 |
+| --- | --- | --- | --- |
+| 8核 | 16G | 100G | 200G（可扩容）| 
+| 4核 | 8G | 100G | 200G（可扩容）|
 
-## 配置1
-- CPU: 8核心
-- 内存：16G
+---
 
-## 配置2
-- CPU: 4核心
-- 内存：8G
+
 
 
 - 定期备份
