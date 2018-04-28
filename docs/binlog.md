@@ -98,3 +98,20 @@ mysql > start slave;
 mysql > show slave status \G;
 mysql > stop slave;
 ```
+
+---
+
+# 日志清理
+
+## [方法一] 手动清理 binlog
+```
+mysql > show master status;
+mysql > purge master logs before'2018-01-01 00:00:00';
+```
+
+## [方法二] 通过设置 binlog 过期的时间，使系统自动删除 binlog 文件
+```
+mysql > show variables like 'expire_logs_days'; 
+mysql > set global expire_logs_days = 365;
+```
+
