@@ -105,7 +105,8 @@ mysql > stop slave;
 
 ## [方法一] 手动清理 binlog
 ```
-mysql > show master status;
+mysql > show master status; # 主库
+mysql > show slave status; # 从库
 mysql > purge master logs before'2018-01-01 00:00:00';
 ```
 
