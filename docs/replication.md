@@ -44,6 +44,7 @@ mysql > FLUSH PRIVILEGES;
 mysqldump --master-data 记录 master_log_file 和 master_log_pos，启动复制时需要用到
 
 ```
+mysqldump -h 127.0.0.1 -P 3306 -u root -p {123456} -A --master-data > all.sql
 
 ```
 
