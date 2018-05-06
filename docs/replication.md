@@ -63,6 +63,7 @@ datadir         = /var/lib/mysql
 # Disabling symbolic-links is recommended to prevent assorted security risks
 symbolic-links=0
 character-set-server = utf8
+max_connections=1000 # 最大链接数
 log-bin=mysql-bin
 server-id=2
 relay_log=mysql-relay-bin
