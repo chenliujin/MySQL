@@ -31,7 +31,7 @@ mysql > show master status;
 +------------------+----------+--------------+------------------+-------------------+
 ```
 
-### 权限
+## 权限
 
 ```
 mysql > CREATE USER 'replication'@'k1' IDENTIFIED BY '123456';
@@ -39,10 +39,29 @@ mysql > GRANT REPLICATION SLAVE ON *.* TO 'replication'@'k1';
 mysql > FLUSH PRIVILEGES;
 ```
 
+## 备份主库
+
+mysqldump --master-data 记录 master_log_file 和 master_log_pos，启动复制时需要用到
+
+```
+
+```
+
 ---
 
 # 从库
+
 ```
+[mysqld]
+pid-file        = /var/run/mysqld/mysqld.pid
+socket          = /var/run/mysqld/mysqld.sock
+datadir         = /var/lib/mysql
+#log-error      = /var/log/mysql/error.log
+# By default we only accept connections from localhost
+#bind-address   = 127.0.0.1
+# Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
+character-set-server = utf8
 log-bin=mysql-bin
 server-id=2
 relay_log=mysql-relay-bin
@@ -54,9 +73,6 @@ relay-log 日志记录的是从服务器I/O线程将主服务器的二进制日�
 
 log_slave_updates 表示允许备库将其重放的事件也记录到自身的二进制日志中。
 
-### 导出 Master 上的数据
-
-mysqldump --master-data 记录 master_log_file 和 master_log_pos，启动复制时需要用到
 
 ### 启用复制
 ```
