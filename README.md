@@ -16,7 +16,7 @@ mysql > select * from information_schema.processlist where db = 'wordpress';
 | CPU | 内存 | 系统盘 | 数据盘 | 备注 |
 | --- | --- | --- | --- | --- |
 | 8核 | 16G | 100G | 200G（可扩容）| 主库 | 
-| 4核 | 8G | 100G | 200G（可扩容）| 从库(双主) |
+| 4核 | 8G  | 100G | 200G（可扩容）| 从库(双主) |
 
 ---
 
