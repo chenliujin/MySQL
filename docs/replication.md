@@ -34,8 +34,8 @@ mysql > show master status;
 ## 权限
 
 ```
-mysql > CREATE USER 'replication'@'k1' IDENTIFIED BY '123456';
-mysql > GRANT REPLICATION SLAVE ON *.* TO 'replication'@'k1';
+mysql > CREATE USER 'replication'@'%' IDENTIFIED BY '123456';
+mysql > GRANT REPLICATION SLAVE ON *.* TO 'replication'@'%';
 mysql > FLUSH PRIVILEGES;
 ```
 
@@ -78,7 +78,7 @@ log_slave_updates 表示允许备库将其重放的事件也记录到自身的�
 
 ### 启用复制
 ```
-mysql > change master to master_host='k2',master_user='replication',master_password='123456',master_log_file='mysql-bin.000001',master_log_pos=154;
+mysql > change master to master_host='k2', master_port=33066, master_user='replication',master_password='123456',master_log_file='mysql-bin.000001',master_log_pos=154;
 mysql > start slave;
 mysql > show slave status \G;
 mysql > stop slave;
