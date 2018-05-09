@@ -75,8 +75,8 @@ relay-log 日志记录的是从服务器I/O线程将主服务器的二进制日�
 
 log_slave_updates 表示允许备库将其重放的事件也记录到自身的二进制日志中。
 
-
 ### 启用复制
+
 ```
 mysql > change master to master_host='k2', master_port=33066, master_user='replication',master_password='123456',master_log_file='mysql-bin.000001',master_log_pos=154;
 mysql > start slave;
@@ -84,7 +84,38 @@ mysql > show slave status \G;
 mysql > stop slave;
 ```
 
+---
 
+# 从库切为主库
+
+## 锁定主库
+
+## 检查从库同步状态
+
+```
+mysql > show processlist;
+```
+
+直到看到状态都为：slave has read all relay log 表示更新都执行完毕
+
+## 从库切换为主库
+
+```
+mysql > stop slave;
+mysql > reset master;
+```
+
+### 配置
+
+注释掉：
+
+```
+# relay_log=mysql-relay-bin
+# log_slave_updates=1
+# read_only=1
+```
+
+---
 
 # 参考文献
 - https://dev.mysql.com/doc/refman/5.7/en/replication.html
