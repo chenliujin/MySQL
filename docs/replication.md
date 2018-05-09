@@ -90,6 +90,11 @@ mysql > stop slave;
 
 ## 锁定主库
 
+```
+mysql > flush tables with read lock;
+mysql > unlock tables; # 最后执行 
+```
+
 ## 检查从库同步状态
 
 ```
