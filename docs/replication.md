@@ -112,9 +112,10 @@ mysql > reset master;
 
 ### 配置
 
-注释掉：
+重置 server-id=1, 其它注释掉：
 
 ```
+server-id=1
 # relay_log=mysql-relay-bin
 # log_slave_updates=1
 # read_only=1
