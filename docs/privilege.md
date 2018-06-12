@@ -1,6 +1,12 @@
 
 - 严格控制一张表的操作权限：INSERT，UPDATE，DELETE，不需要的权限不要分配
 
+# 查看当前用户下所有的权限
+
+```
+mysql > show grants;
+```
+
 # 只读
 ```
 # mysql > CREATE USER 'viewer'@'%' IDENTIFIED BY '72b154cb';
@@ -20,4 +26,11 @@ mysql > flush privileges;
 # 删除用户
 ```
 mysql > drop user appuser@'%';
+```
+
+# revoke 撤销权限
+
+```
+mysql > revoke insert, update on zencart.* from appuser@'%';
+mysql > flush privileges;
 ```
