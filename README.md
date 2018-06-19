@@ -18,6 +18,8 @@ mysql > select * from information_schema.processlist where db = 'wordpress';
 | 8核 | 16G | 100G | 200G（可扩容）| 主库 | 
 | 4核 | 8G  | 100G | 200G（可扩容）| 从库(双主) |
 
+- 如果读写分离，那么负载主要在从库，从库配置需要调整
+
 ---
 
 
