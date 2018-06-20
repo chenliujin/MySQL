@@ -68,7 +68,7 @@ log-bin=mysql-bin
 server-id=2
 relay_log=mysql-relay-bin
 log_slave_updates=1
-read_only=1
+read_only=1 # 只读
 ```
 
 relay-log 日志记录的是从服务器I/O线程将主服务器的二进制日志读取过来记录到从服务器本地文件，然后SQL线程会读取 relay-log 日志的内容并应用到从服务器
