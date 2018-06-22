@@ -44,4 +44,3 @@ spec:
           path: /opt/mysql/conf/
       nodeSelector:
         node: sandbox 
-
