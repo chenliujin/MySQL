@@ -42,3 +42,6 @@ spec:
         nfs:
           server: 127.0.0.1
           path: /opt/mysql/conf/
+      nodeSelector:
+        node: sandbox 
+
