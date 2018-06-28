@@ -1,21 +1,16 @@
-apiVersion: extensions/v1beta1
-kind: Deployment
+apiVersion: v1
+kind: ReplicationController 
 metadata:
   name: sandbox-mysql 
-  namespace: sandbox 
-  labels:
-    k8s-app: sandbox-mysql 
-    kubernetes.io/cluster-service: "true"
-    addonmanager.kubernetes.io/mode: Reconcile
+  namespace: sandbox
 spec:
   replicas: 1
   selector:
-    matchLabels:
-      k8s-app: sandbox-mysql 
+    app: sandbox-mysql 
   template:
     metadata:
       labels:
-        k8s-app: sandbox-mysql 
+        app: sandbox-mysql 
     spec:
       containers:
       - name: sandbox-mysql 
@@ -24,8 +19,8 @@ spec:
         - name: MYSQL_ROOT_PASSWORD 
           value: 72b154cb 
         ports:
-        - containerPort: 3306 
-          protocol: TCP
+          - name: default
+            containerPort: 3306 
         volumeMounts:
         - name: data
           mountPath: /var/lib/mysql
