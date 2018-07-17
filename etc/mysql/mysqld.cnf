@@ -9,6 +9,7 @@ datadir         = /var/lib/mysql
 symbolic-links=0
 character-set-server = utf8
 max_connections=1000 # 最大链接数
+lower_case_table_names=1
 #log-bin=mysql-bin
 #server-id=1
 #binlog-ignore-db = information_schema
