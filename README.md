@@ -3,8 +3,30 @@
 ```
 # rpm -ivh https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm
 # yum install -y mysql-community-server
-# systemctl enable mysqld
 ```
+
+## 1. 开机启动
+```
+# systemctl enable mysqld
+# systemctl start  mysqld
+```
+
+## 2. 初始密码
+
+```
+# cat /var/log/mysqld.log | grep password
+2018-09-18T05:45:40.494756Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: 7sEFoReyvf&i
+```
+
+## 3. 修改初始密码
+
+密码需包含大小写字母，数字，特殊符号
+
+```
+mysql > SHOW VARIABLES LIKE 'validate_password%';
+mysql > ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '@Chenliujin8';
+```
+
 
 ---
 
