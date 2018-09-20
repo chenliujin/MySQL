@@ -7,6 +7,14 @@
 mysql > show grants;
 ```
 
+# ALL PRIVILEGES
+
+```
+mysql > CREATE USER 'appuser'@'%' IDENTIFIED BY '@Chenliujin8';
+mysql > GRANT ALL PRIVILEGES on *.* to appuser@'%';
+mysql > FLUSH PRIVILEGES;
+```
+
 # 只读
 ```
 # mysql > CREATE USER 'viewer'@'%' IDENTIFIED BY '72b154cb';
@@ -17,7 +25,7 @@ mysql > show grants;
 
 # 增删改查
 ```
-mysql > CREATE USER 'appuser'@'%' IDENTIFIED BY '123456';
+mysql > CREATE USER 'appuser'@'%' IDENTIFIED BY '@Chenliujin8';
 mysql > GRANT SELECT,INSERT,UPDATE,DELETE on zencart.* to appuser@'%';
 mysql > flush privileges;
 ```
