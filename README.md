@@ -27,6 +27,11 @@ mysql > SHOW VARIABLES LIKE 'validate_password%';
 mysql > ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '@Chenliujin8';
 ```
 
+# JDBC
+
+```
+rpm -ivh https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-8.0.12-1.el7.noarch.rpm
+```
 
 ---
 
