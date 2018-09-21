@@ -2,6 +2,9 @@ FROM mysql:5.7.18
 
 MAINTAINER chenliujin <liujin.chen@qq.com>
 
+ENV MYSQL_ROOT_PASSWORD chenliujin
+ENV MYSQL_ROOT_HOST localhost
+
 # 1.修改时区
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 
 
