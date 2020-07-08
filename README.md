@@ -1,3 +1,10 @@
+# 知识点
+* 复合索引
+* 存储引擎
+
+
+
+
 # Install
 
 ```
@@ -44,6 +51,14 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
 ```
 mysql > SHOW VARIABLES LIKE 'validate_password%';
 mysql > ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '@Chenliujin8';
+```
+
+`降低级别`
+
+```
+mysql> set global validate_password_policy=0;
+mysql> SHOW VARIABLES LIKE 'validate_password%';
+mysql > ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'chenliujin';
 ```
 
 # JDBC
